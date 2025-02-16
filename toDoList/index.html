@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hogwarts To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Боковая панель с категориями -->
+    <aside class="sidebar">
+      <h2>Hogwarts Houses</h2>
+      <ul id="category-list">
+        <li class="category active" data-category="All">All</li>
+        <li class="category" data-category="Tasks">Tasks</li>
+        <li class="category" data-category="Gryffindor">Gryffindor</li>
+        <li class="category" data-category="Slytherin">Slytherin</li>
+        <li class="category" data-category="Hufflepuff">Hufflepuff</li>
+        <li class="category" data-category="Ravenclaw">Ravenclaw</li>
+      </ul>
+    </aside>
+
+    <!-- Основная часть с задачами -->
+    <main class="content">
+      <h1 id="category-title">All</h1>
+      <div class="task-input-container">
+        <input type="text" id="task-input" placeholder="Add a new task">
+        <button id="add-button">Add</button>
+      </div>
+      <ul id="task-list"></ul>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

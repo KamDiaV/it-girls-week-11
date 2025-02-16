@@ -1,0 +1,176 @@
+/* Основные стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Контейнер приложения */
+.app {
+  display: flex;
+  width: 100%;
+}
+
+/* Боковая панель */
+.sidebar {
+  width: 20%;
+  background-color: #d46b6b;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar ul li.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Основная часть */
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Поле ввода и кнопка */
+.task-input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#task-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#add-button {
+  background-color: #d46b6b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#add-button:hover {
+  background-color: #b73e3e;
+}
+
+/* Список задач */
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#task-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+#task-list li:last-child {
+  border-bottom: none;
+}
+
+.task-text {
+  flex: 1;
+  word-wrap: break-word;
+}
+
+/* Кнопка удаления */
+.delete-btn {
+  cursor: pointer;
+}
+
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  transition: 0.2s;
+}
+
+.delete-icon:hover {
+  transform: rotate(-20deg);
+  opacity: 0.8;
+}
+
+/* Чекбокс */
+.task-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.task-checkbox:checked {
+  background-image: url('./icons/check.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.task-removing {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+/* Индикатор категории (цветной круг) */
+.category-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
